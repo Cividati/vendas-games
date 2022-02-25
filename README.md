@@ -30,3 +30,4 @@ More Examples:
 - `test`: (adding missing tests, refactoring tests; no production code change)
 - `chore`: (updating grunt tasks etc; no production code change)
 - `git`: (add or update a git file, eg. .gitignore)
+- `build`: (add or update pom.xml)
