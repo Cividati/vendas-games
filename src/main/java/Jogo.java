@@ -1,7 +1,9 @@
 
 import com.opencsv.bean.CsvBindByName;
+import lombok.AllArgsConstructor;
 // rank,name,platform,year,genre,publisher,na_sales,eu_sales,jp_sales,other_sales,global_sales
 
+@AllArgsConstructor
 public class Jogo {
 
     @CsvBindByName
