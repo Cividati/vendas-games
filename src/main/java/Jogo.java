@@ -51,4 +51,16 @@ public class Jogo {
         System.out.println("Playform: "+ this.getPlatform());
         System.out.println("");
     }
+
+    public void filterByPlatform(String platform){
+        if (this.getPlatform().equals(platform)){
+            this.show();
+        }
+    }
+
+    public void filterByPublisher(String publisher){
+        if (this.getPlatform().equals(publisher)){
+            this.show();
+        }
+    }
 }
