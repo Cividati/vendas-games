@@ -1,9 +1,11 @@
 
 import com.opencsv.bean.CsvBindByName;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 // rank,name,platform,year,genre,publisher,na_sales,eu_sales,jp_sales,other_sales,global_sales
 
 @AllArgsConstructor
+@Data
 public class Jogo {
 
     @CsvBindByName
@@ -39,4 +41,7 @@ public class Jogo {
     @CsvBindByName(column = "global_sales", required = true)
     private float global_sales;
 
+    public Jogo() {
+
+    }
 }

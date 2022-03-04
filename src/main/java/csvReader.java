@@ -2,8 +2,15 @@ import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 
 import java.io.FileReader;
+import java.io.IOException;
+import java.io.Reader;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Iterator;
 import java.util.List;
 
+import com.opencsv.bean.CsvToBean;
+import com.opencsv.bean.CsvToBeanBuilder;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -12,31 +19,26 @@ import lombok.Data;
 public class csvReader {
     // Java code to illustrate reading a
     // CSV file line by line
-    public static void readDataLineByLine(String file)
-    {
+    public static void readCSV(String file) throws IOException {
 
-        try {
+        try (
+                Reader reader = Files.newBufferedReader(Paths.get(file));
+        ) {
+            CsvToBean<Jogo> csvToBean = new CsvToBeanBuilder(reader)
+                    .withType(Jogo.class)
+                    .withIgnoreLeadingWhiteSpace(true)
+                    .build();
 
-            // Create an object of filereader
-            // class with CSV file as a parameter.
-            FileReader filereader = new FileReader(file);
+            Iterator<Jogo> csvUserIterator = csvToBean.iterator();
 
-            // create csvReader object passing
-            // file reader as a parameter
-            CSVReader csvReader = new CSVReader(filereader);
-            String[] nextRecord;
-
-            // we are going to read data line by line
-            while ((nextRecord = csvReader.readNext()) != null) {
-                for (String cell : nextRecord) {
-                    System.out.print(cell + "\t");
-                }
-                System.out.println();
+            while (csvUserIterator.hasNext()) {
+                Jogo csvUser = csvUserIterator.next();
+                System.out.println("Rank : " + csvUser.getRank());
+                System.out.println("Name : " + csvUser.getName());
+                System.out.println("==========================");
             }
         }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
+
     }
     // Java code to illustrate reading a
     // all data at once
