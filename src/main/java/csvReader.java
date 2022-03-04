@@ -1,14 +1,10 @@
-import com.opencsv.CSVReader;
-import com.opencsv.CSVReaderBuilder;
 
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
@@ -18,8 +14,7 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class csvReader {
-    // Java code to illustrate reading a
-    // CSV file line by line
+
     public static ArrayList<Jogo> readCSV(String file) throws IOException {
 
         try (

@@ -1,5 +1,3 @@
-import jdk.swing.interop.SwingInterOpUtils;
-
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -16,7 +14,7 @@ private static final String CSV_PATH = "data/vendas-games.csv";
         System.out.println("Showing games only in " + platform + "\n");
         arrayJogos.forEach(jogo -> jogo.filterByPlatform(platform));
 
-        // 2. Filtrar e cirar um ArrayList (ou coleção equivalente) buscando jogos de publishers específicas.
+        // 2. Filtrar e criar um ArrayList (ou coleção equivalente) buscando jogos de publishers específicas.
         String publisher = "Activision";
         System.out.println("Showing games made by " + publisher + "\n");
         arrayJogos.forEach(jogo -> jogo.filterByPublisher(publisher));
