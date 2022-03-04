@@ -44,4 +44,11 @@ public class Jogo {
     public Jogo() {
 
     }
+
+    public void show() {
+        System.out.println("Nome: " + this.getName());
+        System.out.println("Rank: " + this.getRank());
+        System.out.println("Playform: "+ this.getPlatform());
+        System.out.println("");
+    }
 }
