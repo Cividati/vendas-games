@@ -4,6 +4,11 @@ import com.opencsv.CSVReaderBuilder;
 import java.io.FileReader;
 import java.util.List;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
 public class csvReader {
     // Java code to illustrate reading a
     // CSV file line by line
