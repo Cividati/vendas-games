@@ -48,8 +48,8 @@ public class Jogo {
     public void show() {
         System.out.println("Nome: " + this.getName());
         System.out.println("Rank: " + this.getRank());
-        System.out.println("Playform: "+ this.getPlatform());
-        System.out.println("");
+        System.out.println("Platform: "+ this.getPlatform());
+        System.out.println("------------------");
     }
 
     public void filterByPlatform(String platform){
@@ -59,7 +59,7 @@ public class Jogo {
     }
 
     public void filterByPublisher(String publisher){
-        if (this.getPlatform().equals(publisher)){
+        if (this.getPublisher().equals(publisher)){
             this.show();
         }
     }
